@@ -43,6 +43,6 @@ This project demonstrates asynchronous JavaScript concepts including Promises, a
 * Handling API errors
 * Fixing DOM updates after fetch
 
-## Live Demo (if deployed)
+## Live Demo 
 [View Live Demo](https://mwas12345spec.github.io/iyf-s10-week-06-mwas12345spec/)
 
