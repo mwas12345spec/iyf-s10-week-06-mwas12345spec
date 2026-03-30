@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+</head>
+<body>
+
+<h1>Weather Dashboard</h1>
+
+<form id="search-form">
+    <input type="text" id="city-input" placeholder="Enter city" required>
+    <button>Search</button>
+</form>
+
+<p id="loading" class="hidden">Loading...</p>
+<p id="error" class="hidden"></p>
+
+<div id="weather-display" class="hidden">
+    <h2 id="city-name"></h2>
+    <p id="temperature"></p>
+    <p id="description"></p>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
