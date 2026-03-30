@@ -1,0 +1,154 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #000000, #0f172a);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* App Container */
+.weather-app {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
+    text-align: center;
+}
+
+/* Title */
+.weather-app h1 {
+    color: gold;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Form */
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #1e293b;
+    color: white;
+}
+
+/* Button */
+button {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    background: gold;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffd700cc;
+    transform: scale(1.05);
+}
+
+/* Loading */
+#loading {
+    margin: 10px 0;
+    color: gold;
+}
+
+/* Error */
+.error {
+    color: #ff4d4d;
+    margin: 10px 0;
+}
+
+/* Weather Display */
+#weather-display {
+    margin-top: 15px;
+}
+
+#city-name {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: gold;
+}
+
+#temperature {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+#description {
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+/* Icon */
+#weather-icon {
+    width: 80px;
+}
+
+/* Details */
+.weather-details {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* History */
+#recent-searches {
+    margin-top: 20px;
+}
+
+#recent-searches h3 {
+    color: gold;
+}
+
+#history {
+    list-style: none;
+    margin-top: 10px;
+}
+
+#history li {
+    background: rgba(255, 215, 0, 0.1);
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#history li:hover {
+    background: gold;
+    color: black;
+}
+
+/* Hidden */
+.hidden {
+    display: none;
+}
