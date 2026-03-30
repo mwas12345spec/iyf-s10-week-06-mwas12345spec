@@ -1,25 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Weather App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather App</title>
+   <link rel="stylesheet" href="style.css"> 
 </head>
+
 <body>
 
-<h1>Weather Dashboard</h1>
+<h1>Weather App</h1>
 
-<form id="search-form">
-    <input type="text" id="city-input" placeholder="Enter city" required>
-    <button>Search</button>
-</form>
+<input type="text" id="city" placeholder="Enter city name">
+<button onclick="getWeather()">Search</button>
 
-<p id="loading" class="hidden">Loading...</p>
-<p id="error" class="hidden"></p>
-
-<div id="weather-display" class="hidden">
-    <h2 id="city-name"></h2>
-    <p id="temperature"></p>
-    <p id="description"></p>
-</div>
+<div class="weather-box" id="result"></div>
+<div class="forecast-container" id="forecast"></div>
 
 <script src="app.js"></script>
 </body>
