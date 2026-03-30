@@ -44,5 +44,5 @@ This project demonstrates asynchronous JavaScript concepts including Promises, a
 * Fixing DOM updates after fetch
 
 ## Live Demo (if deployed)
-[View Live Demo](https://your-deployed-url.com)
+[View Live Demo](https://mwas12345spec.github.io/iyf-s10-week-06-mwas12345spec/)
 
