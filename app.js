@@ -1,60 +1,56 @@
-const API_KEY = "YOUR_API_KEY";
+async function getWeather() {
+    const city = document.getElementById("city").value.trim();
 
-const form = document.getElementById("search-form");
-const cityInput = document.getElementById("city-input");
+    if (!city) {
+        alert("Enter a city");
+        return;
+    }
 
-const loading = document.getElementById("loading");
-const error = document.getElementById("error");
-const display = document.getElementById("weather-display");
-
-const cityName = document.getElementById("city-name");
-const temperature = document.getElementById("temperature");
-const description = document.getElementById("description");
-
-async function getWeather(city) {
     try {
-        showLoading();
-        hideError();
-
-        const res = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
-        );
-
-        if (!res.ok) throw new Error("City not found");
-
+        const res = await fetch(`https://wttr.in/${city}?format=j1`);
         const data = await res.json();
 
-        cityName.textContent = data.name;
-        temperature.textContent = `Temp: ${data.main.temp}°C`;
-        description.textContent = data.weather[0].description;
+        const current = data.current_condition[0];
 
-        display.classList.remove("hidden");
+        document.getElementById("result").innerHTML = `
+            <h2>${city}</h2>
+            <p> ${current.temp_C}°C</p>
+            <p> ${current.weatherDesc[0].value}</p>
+            <p> Humidity: ${current.humidity}%</p>
+            <p> Wind: ${current.windspeedKmph} km/h</p>
+        `;
+
+        const weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        const todayIndex = new Date().getDay();
+
+        let forecastHTML = "";
+        const forecastDays = data.weather.slice(0, 5); // ONLY 5 DAYS
+
+        forecastDays.forEach((day, index) => {
+            let label;
+
+            if (index === 0) {
+                label = "Today";
+            } else if (index === 1) {
+                label = "Tomorrow";
+            } else {
+                label = weekDays[(todayIndex + index) % 7];
+            }
+
+            forecastHTML += `
+                <div class="forecast-card">
+                    <h4>${label}</h4>
+                    <p> Max: ${day.maxtempC}°C</p>
+                    <p> Min: ${day.mintempC}°C</p>
+                    <p> ${day.hourly[0].weatherDesc[0].value}</p>
+                </div>
+            `;
+        });
+
+        document.getElementById("forecast").innerHTML = forecastHTML;
 
     } catch (err) {
-        showError(err.message);
-    } finally {
-        hideLoading();
+        document.getElementById("result").innerHTML = "Error loading weather";
+        document.getElementById("forecast").innerHTML = "";
     }
 }
-
-function showLoading() {
-    loading.classList.remove("hidden");
-}
-
-function hideLoading() {
-    loading.classList.add("hidden");
-}
-
-function showError(msg) {
-    error.textContent = msg;
-    error.classList.remove("hidden");
-}
-
-function hideError() {
-    error.classList.add("hidden");
-}
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    getWeather(cityInput.value);
-});
