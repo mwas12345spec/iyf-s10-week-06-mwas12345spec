@@ -14,10 +14,10 @@ async function getWeather() {
 
         document.getElementById("result").innerHTML = `
             <h2>${city}</h2>
-            <p> ${current.temp_C}°C</p>
-            <p> ${current.weatherDesc[0].value}</p>
-            <p> Humidity: ${current.humidity}%</p>
-            <p> Wind: ${current.windspeedKmph} km/h</p>
+            <p>🌡️ ${current.temp_C}°C</p>
+            <p>🌤️ ${current.weatherDesc[0].value}</p>
+            <p>💧 Humidity: ${current.humidity}%</p>
+            <p>🌬️ Wind: ${current.windspeedKmph} km/h</p>
         `;
 
         const weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -40,9 +40,9 @@ async function getWeather() {
             forecastHTML += `
                 <div class="forecast-card">
                     <h4>${label}</h4>
-                    <p> Max: ${day.maxtempC}°C</p>
-                    <p> Min: ${day.mintempC}°C</p>
-                    <p> ${day.hourly[0].weatherDesc[0].value}</p>
+                    <p>🌡️ Max: ${day.maxtempC}°C</p>
+                    <p>🌡️ Min: ${day.mintempC}°C</p>
+                    <p>🌧️ ${day.hourly[0].weatherDesc[0].value}</p>
                 </div>
             `;
         });
