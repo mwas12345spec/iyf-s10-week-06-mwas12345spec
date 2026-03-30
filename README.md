@@ -1,38 +1,48 @@
-# Week {Number}: {Project Title}
+# Week 6: Asynchronous JavaScript - Weather Dashboard
 
 ## Author
-- **Name:** Your Full Name
-- **GitHub:** [@MaisoriKitayama](https://github.com/MaisoriKitayama)
-- **Date:** Month Day, Year
+
+* **Name:** Mark Mwangi
+* **GitHub:** https://github.com/mwas12345spec
+* **Date:** March 30, 2026
 
 ## Project Description
-Brief description of what you built and why.
+
+This project demonstrates asynchronous JavaScript concepts including Promises, async/await, and API integration. A weather dashboard was built using the OpenWeatherMap API to fetch real-time weather data.
 
 ## Technologies Used
-- HTML5
-- CSS3
-- JavaScript
-- (list all technologies)
+
+* HTML5
+* CSS3
+* JavaScript
+* OpenWeatherMap API
 
 ## Features
-- Feature 1
-- Feature 2
-- Feature 3
+
+* Search weather by city
+* Displays temperature and description
+* Loading indicator
+* Error handling
+* Async/await implementation
 
 ## How to Run
+
 1. Clone this repository
-2. Open `index.html` in your browser
-   OR
-   Run `npm install` then `npm start`
+2. Open `index.html` in browser
 
 ## Lessons Learned
-What did you learn while building this project?
+
+* Difference between synchronous and asynchronous code
+* How to use Promises and async/await
+* Fetching data from APIs
+* Handling errors and loading states
 
 ## Challenges Faced
-What problems did you encounter and how did you solve them?
 
-## Screenshots (optional)
-![Screenshot description](path/to/screenshot.png)
+* Understanding async flow
+* Handling API errors
+* Fixing DOM updates after fetch
 
 ## Live Demo (if deployed)
 [View Live Demo](https://your-deployed-url.com)
+
